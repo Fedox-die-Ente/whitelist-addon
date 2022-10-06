@@ -5,7 +5,12 @@ function getIDFromFile(steamID64)
         print("File does not exist!") 
     else
         local content = file.Read(storagename, "DATA")
-        
+        local containsId = string.find(content, "hello")
+        if containsId != nil then
+            return true
+        else
+            return false
+        end
     end
 end
 
