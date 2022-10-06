@@ -1,8 +1,8 @@
 local storagename = "whitelist-system.txt"
 
-function getIDFromFile(steamID64)
+local function getIDFromFile(steamID64)
     if !file.Exists(storagename, "DATA") then
-        print("File does not exist!") 
+        print("[Whitelist System] Die Datei existiert nicht!") 
     else
         local content = file.Read(storagename, "DATA")
         local containsId = string.find(content, steamID64)
